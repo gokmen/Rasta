@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 ''' Rasta RST Editor
-    2010 - Gökmen Göksel <gokmen:pardus.org.tr> '''
+    2010 - Gökmen Göksel <gokmeng:gmail.com> '''
 
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free

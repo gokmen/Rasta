@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 ''' Rasta RST Editor
-    2010 - Gökmen Göksel <gokmen:pardus.org.tr> '''
+    2010 - Gökmen Göksel <gokmeng:gmail.com> '''
 
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -126,8 +126,8 @@ setup(name=PROJECT,
       long_description='Live view supported Qt4 based Webkit integrated Rst editor for Pardus Developers and all others.',
       license='GNU GPL2',
       author='Gökmen Göksel',
-      author_email='gokmen@pardus.org.tr',
-      url='http://developer.pardus.org.tr',
+      author_email='gokmeng@gmail.com',
+      url='http://github.com/gokmen/Rasta',
       packages=[PROJECT_LIB],
       scripts=[PROJECT],
       data_files = [('/usr/share/%s' % PROJECT, ['AUTHORS', 'README', 'COPYING', 'HELP'])],

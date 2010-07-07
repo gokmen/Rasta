@@ -244,7 +244,7 @@ msgid ""
 "Live view supported Qt4 based Webkit integrated Rst editor for Pardus "
 "Developers and all others.\n"
 "\n"
-" Author: Gökmen Göksel <gokmen@pardus.org.tr>"
+" Author: Gökmen Göksel <gokmeng@gmail.com>"
 msgstr ""
 
 #: .tmp/rasta.py:323
