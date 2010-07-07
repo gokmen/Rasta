@@ -39,7 +39,7 @@ if __name__ == '__main__':
 
     # Application Settings
     QCoreApplication.setOrganizationName('Pardus')
-    QCoreApplication.setOrganizationDomain('pt.pardus.org.tr')
+    QCoreApplication.setOrganizationDomain('apps.ratonred.com')
     QCoreApplication.setApplicationName('Rasta')
     QCoreApplication.setApplicationVersion(__version__)
 
