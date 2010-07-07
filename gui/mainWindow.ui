@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Rasta</class>
+ <widget class="QMainWindow" name="Rasta">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>833</width>
+    <height>655</height>
+   </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Rasta the Rst Editor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../rasta_lib/icons.qrc">
+    <normaloff>:/icons/rasta.png</normaloff>:/icons/rasta.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>833</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_As"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionRst_Howto"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionBold"/>
+    <addaction name="actionItalic"/>
+    <addaction name="actionCode"/>
+    <addaction name="separator"/>
+    <addaction name="actionLink"/>
+    <addaction name="actionHeader"/>
+    <addaction name="separator"/>
+    <addaction name="actionAdd_Table"/>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>&amp;Options</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionLive_Update"/>
+    <addaction name="actionUpdate_Now"/>
+    <addaction name="separator"/>
+    <addaction name="actionShow_Logs"/>
+    <addaction name="actionShow_Output"/>
+    <addaction name="actionShow_Source"/>
+    <addaction name="actionSelect_Editor_Font"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuOptions"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QDockWidget" name="Logs">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowIcon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/logs.png</normaloff>:/icons/logs.png</iconset>
+   </property>
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <property name="windowTitle">
+    <string>Logs</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="LogsContents">
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="margin">
+      <number>0</number>
+     </property>
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QTableView" name="logs">
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="showDropIndicator" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="dragDropOverwriteMode">
+        <bool>false</bool>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
+       <property name="showGrid">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>Editor Tools</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/document-open.png</normaloff>:/icons/document-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/document-save.png</normaloff>:/icons/document-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSave_As">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/document-save-as.png</normaloff>:/icons/document-save-as.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save As</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/system-log-out.png</normaloff>:/icons/system-log-out.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+  </action>
+  <action name="actionLive_Update">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/system-restart.png</normaloff>:/icons/system-restart.png</iconset>
+   </property>
+   <property name="text">
+    <string>Build on the fly</string>
+   </property>
+   <property name="toolTip">
+    <string>It can be slow..</string>
+   </property>
+  </action>
+  <action name="actionUpdate_Now">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/system-run.png</normaloff>:/icons/system-run.png</iconset>
+   </property>
+   <property name="text">
+    <string>Build</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="actionRst_Howto">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/khelpcenter.png</normaloff>:/icons/khelpcenter.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rst Howto</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/dialog-information.png</normaloff>:/icons/dialog-information.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutRole</enum>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/document-new.png</normaloff>:/icons/document-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionShow_Logs">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/logs.png</normaloff>:/icons/logs.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show Logs</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
+  </action>
+  <action name="actionBold">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/format-text-bold.png</normaloff>:/icons/format-text-bold.png</iconset>
+   </property>
+   <property name="text">
+    <string>Bold</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actionItalic">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/format-text-italic.png</normaloff>:/icons/format-text-italic.png</iconset>
+   </property>
+   <property name="text">
+    <string>Italic</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionLink">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/insert-link.png</normaloff>:/icons/insert-link.png</iconset>
+   </property>
+   <property name="text">
+    <string>Link</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionHeader">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/format-text-underline.png</normaloff>:/icons/format-text-underline.png</iconset>
+   </property>
+   <property name="text">
+    <string>Header</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionAdd_Table">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/insert-table.png</normaloff>:/icons/insert-table.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Table</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/edit-undo.png</normaloff>:/icons/edit-undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/edit-redo.png</normaloff>:/icons/edit-redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Redo</string>
+   </property>
+  </action>
+  <action name="actionCode">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/draw-text.png</normaloff>:/icons/draw-text.png</iconset>
+   </property>
+   <property name="text">
+    <string>Code</string>
+   </property>
+  </action>
+  <action name="actionShow_Output">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/preview.png</normaloff>:/icons/preview.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show Output</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
+   </property>
+  </action>
+  <action name="actionShow_Source">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/source.png</normaloff>:/icons/source.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show Source</string>
+   </property>
+   <property name="shortcut">
+    <string>F4</string>
+   </property>
+  </action>
+  <action name="actionSelect_Editor_Font">
+   <property name="icon">
+    <iconset resource="../rasta_lib/icons.qrc">
+     <normaloff>:/icons/draw-text.png</normaloff>:/icons/draw-text.png</iconset>
+   </property>
+   <property name="text">
+    <string>Select Editor Font</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../rasta_lib/icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>Rasta</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>416</x>
+     <y>327</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

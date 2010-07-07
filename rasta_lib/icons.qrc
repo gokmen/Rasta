@@ -1,0 +1,26 @@
+<RCC>
+  <qresource prefix="/" >
+    <file>icons/preview.png</file>
+    <file>icons/source.png</file>
+    <file>icons/rasta.png</file>
+    <file>icons/edit-undo.png</file>
+    <file>icons/draw-text.png</file>
+    <file>icons/edit-redo.png</file>
+    <file>icons/dialog-information.png</file>
+    <file>icons/khelpcenter.png</file>
+    <file>icons/warning.png</file>
+    <file>icons/logs.png</file>
+    <file>icons/system-restart.png</file>
+    <file>icons/system-run.png</file>
+    <file>icons/system-log-out.png</file>
+    <file>icons/document-new.png</file>
+    <file>icons/insert-table.png</file>
+    <file>icons/document-open.png</file>
+    <file>icons/document-save.png</file>
+    <file>icons/document-save-as.png</file>
+    <file>icons/format-text-bold.png</file>
+    <file>icons/format-text-italic.png</file>
+    <file>icons/insert-link.png</file>
+    <file>icons/format-text-underline.png</file>
+  </qresource>
+</RCC>

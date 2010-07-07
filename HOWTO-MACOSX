@@ -1,0 +1,79 @@
+Howto Rasta on Mac OS X
+-----------------------
+
+ First of all Xcode (latest version for compiling sources)
+
+1. **Python**:
+
+ Download and install Python 2.6 > from http://python.org/download (DMG: install as usual)	 
+
+2. **Qt4**:
+
+ http://qt.nokia.com/downloads/sdk-mac-os-cpp (DMG: install as usual)
+
+3. **SIP**:
+
+ http://www.riverbankcomputing.co.uk/software/sip/download
+
+ You can use sip-snapshot*.zip/tar.gz (development snapshot)
+
+ Installing::
+  
+  python configure.py
+  make
+  sudo make install
+  cd ..
+
+4. **PyQT**:
+
+ http://www.riverbankcomputing.co.uk/software/pyqt/download
+
+ You can use PyQt*snapshot*.zip/tar.gz (development snapshot)
+
+ Installing::
+  
+  python configure.py
+  make
+  sudo make install
+  cd ..
+
+5. **Docutils**:
+
+ http://prdownloads.sourceforge.net/docutils/docutils-0.6.tar.gz?download
+
+ Installing::
+
+  cd docutils-0.6
+  sudo python setup.py install
+
+6. **Piksemel**:
+
+ http://svn.pardus.org.tr/uludag/trunk/piksemel
+
+ You can check-out it by::
+
+  $ svn co http://svn.pardus.org.tr/uludag/trunk/piksemel
+
+ Installing::
+
+  cd piksemel
+  sudo python setup.py install
+
+7. **Rasta \\o/**:
+
+ http://svn.pardus.org.tr/uludag/trunk/rasta
+
+ You can check-out it by::
+
+  $ svn co http://svn.pardus.org.tr/uludag/trunk/rasta
+
+ Installing::
+
+  cd rasta
+  sudo python setup.py install
+
+And you can run it by calling::
+
+ $ rasta
+
+*References for PyQt on Mac OS X from* http://www.bdigit.com/blog/2010/02/python-qt4-sip-qscintilla-eric4-tutorial-mac-os-x/

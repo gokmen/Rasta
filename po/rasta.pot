@@ -1,0 +1,268 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-24 15:19+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .tmp/mainWindow.py:223 .tmp/rasta.py:205
+msgid "Rasta the Rst Editor"
+msgstr ""
+
+#: .tmp/mainWindow.py:224
+msgid "&File"
+msgstr ""
+
+#: .tmp/mainWindow.py:225
+msgid "Help"
+msgstr ""
+
+#: .tmp/mainWindow.py:226
+msgid "&Edit"
+msgstr ""
+
+#: .tmp/mainWindow.py:227
+msgid "&Options"
+msgstr ""
+
+#: .tmp/mainWindow.py:228
+msgid "Logs"
+msgstr ""
+
+#: .tmp/mainWindow.py:229
+msgid "Editor Tools"
+msgstr ""
+
+#: .tmp/mainWindow.py:230
+msgid "Open"
+msgstr ""
+
+#: .tmp/mainWindow.py:231
+msgid "Ctrl+O"
+msgstr ""
+
+#: .tmp/mainWindow.py:232
+msgid "Save"
+msgstr ""
+
+#: .tmp/mainWindow.py:233
+msgid "Ctrl+S"
+msgstr ""
+
+#: .tmp/mainWindow.py:234
+msgid "Save As"
+msgstr ""
+
+#: .tmp/mainWindow.py:235
+msgid "Exit"
+msgstr ""
+
+#: .tmp/mainWindow.py:236
+msgid "Ctrl+Q"
+msgstr ""
+
+#: .tmp/mainWindow.py:237
+msgid "Build on the fly"
+msgstr ""
+
+#: .tmp/mainWindow.py:238
+msgid "It can be slow.."
+msgstr ""
+
+#: .tmp/mainWindow.py:239
+msgid "Build"
+msgstr ""
+
+#: .tmp/mainWindow.py:240
+msgid "F5"
+msgstr ""
+
+#: .tmp/mainWindow.py:241
+msgid "Rst Howto"
+msgstr ""
+
+#: .tmp/mainWindow.py:242
+msgid "F1"
+msgstr ""
+
+#: .tmp/mainWindow.py:243
+msgid "About"
+msgstr ""
+
+#: .tmp/mainWindow.py:244
+msgid "New"
+msgstr ""
+
+#: .tmp/mainWindow.py:245
+msgid "Ctrl+N"
+msgstr ""
+
+#: .tmp/mainWindow.py:246
+msgid "Show Logs"
+msgstr ""
+
+#: .tmp/mainWindow.py:247
+msgid "F2"
+msgstr ""
+
+#: .tmp/mainWindow.py:248
+msgid "Bold"
+msgstr ""
+
+#: .tmp/mainWindow.py:249
+msgid "Ctrl+B"
+msgstr ""
+
+#: .tmp/mainWindow.py:250
+msgid "Italic"
+msgstr ""
+
+#: .tmp/mainWindow.py:251
+msgid "Ctrl+I"
+msgstr ""
+
+#: .tmp/mainWindow.py:252
+msgid "Link"
+msgstr ""
+
+#: .tmp/mainWindow.py:253
+msgid "Ctrl+L"
+msgstr ""
+
+#: .tmp/mainWindow.py:254
+msgid "Header"
+msgstr ""
+
+#: .tmp/mainWindow.py:255
+msgid "Ctrl+H"
+msgstr ""
+
+#: .tmp/mainWindow.py:256 .tmp/rasta.py:94 .tmp/rasta.py:96
+msgid "Add Table"
+msgstr ""
+
+#: .tmp/mainWindow.py:257
+msgid "Undo"
+msgstr ""
+
+#: .tmp/mainWindow.py:258
+msgid "Redo"
+msgstr ""
+
+#: .tmp/mainWindow.py:259
+msgid "Code"
+msgstr ""
+
+#: .tmp/mainWindow.py:260
+msgid "Show Output"
+msgstr ""
+
+#: .tmp/mainWindow.py:261
+msgid "F3"
+msgstr ""
+
+#: .tmp/mainWindow.py:262
+msgid "Show Source"
+msgstr ""
+
+#: .tmp/mainWindow.py:263
+msgid "F4"
+msgstr ""
+
+#: .tmp/mainWindow.py:264
+msgid "Select Editor Font"
+msgstr ""
+
+#: .tmp/model.py:26
+msgid "Line"
+msgstr ""
+
+#: .tmp/model.py:26
+msgid "Message"
+msgstr ""
+
+#: .tmp/qrstedit.py:76
+msgid "Spelling Suggestions"
+msgstr ""
+
+#: .tmp/rasta-app.py:28
+msgid ""
+"\n"
+"Usage :\n"
+" $ rasta [filename] [options]\n"
+"\n"
+"Options :\n"
+" --help         : Show this help\n"
+" --hide-source  : Hide source window\n"
+msgstr ""
+
+#: .tmp/rasta.py:94
+msgid "Number of rows :"
+msgstr ""
+
+#: .tmp/rasta.py:97
+msgid "Number of columns :"
+msgstr ""
+
+#: .tmp/rasta.py:120
+msgid "Insert Link"
+msgstr ""
+
+#: .tmp/rasta.py:120
+msgid "Address :"
+msgstr ""
+
+#: .tmp/rasta.py:157
+msgid ""
+"Cannot read file %1:\n"
+"%2."
+msgstr ""
+
+#: .tmp/rasta.py:176
+msgid "Save File"
+msgstr ""
+
+#: .tmp/rasta.py:184
+msgid ""
+"Cannot write file %1:\n"
+"%2."
+msgstr ""
+
+#: .tmp/rasta.py:206
+msgid ""
+"Live view supported Qt4 based Webkit integrated Rst editor for Pardus "
+"Developers and all others.\n"
+"\n"
+" Author: Gökmen Göksel <gokmen@pardus.org.tr>"
+msgstr ""
+
+#: .tmp/rasta.py:323
+msgid ""
+"The document has been modified.\n"
+"Do you want to save your changes?"
+msgstr ""
+
+#: .tmp/utils.py:19
+#, python-format
+msgid "Please install \"%s\" package."
+msgstr ""
+
+#: .tmp/utils.py:48
+msgid "Please run \"setup.py build\" first."
+msgstr ""
+
+#: .tmp/utils.py:70
+#, python-format
+msgid "Rasta parse error: %s"
+msgstr ""

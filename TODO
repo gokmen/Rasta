@@ -1,0 +1,21 @@
+Rasta TODO
+==========
+
+ - Add template support
+ - Find a proper solution for big files in live view
+ - Add command-line options
+    - Use OptParser
+ - Add settings screen
+ - Add 80 character wrap function
+ - Find/Replace support
+ - Add HTML print support
+ - Add save as HTML support (çohönemli)
+ - Remove piksemel dependency
+ - Add a shiny highlight method for setCurrentLine
+
+ ✔ Add zemberek spell-check support
+ ✔ Include file name in window title
+ ✔ Using spaces instead of tabs
+ ✔ Localization support
+ ✔ Line Number support
+

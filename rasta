@@ -1,0 +1,54 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+''' Rasta RST Editor
+    2010 - Gökmen Göksel <gokmen:pardus.org.tr> '''
+
+# This program is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free
+# Software Foundation; either version 2 of the License, or (at your option)
+# any later version.
+
+# Python Core Libraries
+import sys
+
+# PyQt4 Core Libraries
+from PyQt4.QtGui import QApplication
+from PyQt4.QtCore import QCoreApplication
+
+# Rasta Core Library
+from rasta_lib import __version__
+from rasta_lib.rasta import Rasta
+
+# i18n Support
+import gettext
+_ = gettext.translation('rasta', fallback=True).ugettext
+
+USAGE = _(
+'''
+Usage :
+ $ rasta [filename] [options]
+
+Options :
+ --help         : Show this help
+ --hide-source  : Hide source window
+''')
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+
+    # Application Settings
+    QCoreApplication.setOrganizationName('Pardus')
+    QCoreApplication.setOrganizationDomain('pt.pardus.org.tr')
+    QCoreApplication.setApplicationName('Rasta')
+    QCoreApplication.setApplicationVersion(__version__)
+
+    arguments = QCoreApplication.arguments()
+    if len(arguments)>1:
+        if arguments[1] == '--help':
+            sys.exit(USAGE)
+
+    RastaUI = Rasta(arguments)
+    RastaUI.show()
+    sys.exit(app.exec_())
+

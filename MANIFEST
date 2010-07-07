@@ -1,0 +1,10 @@
+AUTHORS
+COPYING
+HELP
+README
+rasta
+setup.py
+rastaLib/__init__.py
+rastaLib/icons_rc.py
+rastaLib/mainWindow.py
+rastaLib/rstLexer.py
