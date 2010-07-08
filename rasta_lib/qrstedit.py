@@ -41,6 +41,13 @@ class RstTextEdit(QPlainTextEdit):
         insertShortcut = QShortcut(Qt.Key_Insert, self)
         insertShortcut.activated.connect(lambda: self.setOverwriteMode(not self.overwriteMode()))
 
+    def toggleSpellChecking(self):
+        if not self.highlighter.dict:
+            self.highlighter.setDict(self.dict)
+        else:
+            self.highlighter.setDict(None)
+        self.highlighter.rehighlight()
+
     def mousePressEvent(self, event):
         if event.button() == Qt.RightButton:
             # Rewrite the mouse event to a left button event so the cursor is

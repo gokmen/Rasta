@@ -231,6 +231,7 @@ class Rasta(QMainWindow):
         self.settings.setValue('liveupdate',
                 self.ui.actionLive_Update.isChecked())
         self.settings.setValue('showlogs', self.ui.actionShow_Logs.isChecked())
+        self.settings.setValue('spellcheck', self.ui.actionSpellcheck.isChecked())
         self.settings.endGroup()
 
         # For TextEdit
@@ -251,6 +252,10 @@ class Rasta(QMainWindow):
         self.ui.actionShow_Logs.setChecked(
                 self.settings.value('showlogs', True).toBool())
         self.ui.Logs.setVisible(self.ui.actionShow_Logs.isChecked())
+        self.ui.actionSpellcheck.setChecked(
+            self.settings.value('spellcheck', True).toBool())
+        if not self.ui.actionSpellcheck.isChecked():
+            self.ui.textEdit.toggleSpellChecking()
         self.settings.endGroup()
 
         # For TextEdit
@@ -294,6 +299,7 @@ class Rasta(QMainWindow):
         self.ui.actionShow_Logs.toggled.connect(self.ui.Logs.setVisible)
         self.ui.actionShow_Source.toggled.connect(self.ui.textEdit.setVisible)
         self.ui.actionShow_Output.toggled.connect(self.ui.webView.setVisible)
+        self.ui.actionSpellcheck.toggled.connect(self.ui.textEdit.toggleSpellChecking)
         self.ui.actionBold.triggered.connect(self.editTrigger)
         self.ui.actionItalic.triggered.connect(self.editTrigger)
         self.ui.actionCode.triggered.connect(self.editTrigger)
