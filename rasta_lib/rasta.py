@@ -169,6 +169,9 @@ class Rasta(QMainWindow):
         self.ui.textEdit.document().setModified(False)
         self.setWindowTitle('Rasta :: %s' % file_name)
 
+    def resizeEvent(self, event):
+        self.ui.textEdit.lineNumber.resizeEvent(event)
+
     def saveFile(self):
         ''' File save operation '''
         if self.file_name == TMPFILE or self.sender() == self.ui.actionSave_As:

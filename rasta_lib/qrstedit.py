@@ -28,7 +28,7 @@ class RstTextEdit(QPlainTextEdit):
 
     def __init__(self, *args):
         QPlainTextEdit.__init__(self, *args)
-        LineNumber(self)
+        self.lineNumber = LineNumber(self)
 
         # Default dictionary based on the current locale.
         self.dict = enchant.Dict()
@@ -116,7 +116,6 @@ class LineNumber(QWidget):
     def __init__(self, editor):
         QWidget.__init__(self, editor)
         self.editor = editor
-        self.editor.resizeEvent = self.resizeEvent
         self.editor.blockCountChanged.connect(self.updateAreaWidth)
         self.editor.updateRequest.connect(self.updateLineNumber)
 
