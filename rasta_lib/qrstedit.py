@@ -65,6 +65,7 @@ class RstTextEdit(QPlainTextEdit):
         if not self.isReadOnly():
             selection = QTextEdit.ExtraSelection()
             lineColor = QColor(Qt.yellow).lighter(160)
+            lineColor.setAlpha(100)
             selection.format.setBackground(lineColor)
             selection.format.setProperty(QTextFormat.FullWidthSelection, True)
             selection.cursor = self.textCursor()
@@ -109,6 +110,16 @@ class RstTextEdit(QPlainTextEdit):
 
         cursor.endEditBlock()
 
+    def paintEvent(self, event):
+        painter = QPainter(self.viewport())
+        painter.setPen(Qt.lightGray)
+        fw = self.fontMetrics().width('X')
+        cw = (80 * fw) + (fw / 2) + 2
+        painter.drawLine(cw, 0, cw, self.height())
+        painter.end()
+        QPlainTextEdit.paintEvent(self, event)
+
+
 class LineNumber(QWidget):
 
     """ Line Number widget for RstTextEdit component """
@@ -151,7 +162,7 @@ class LineNumber(QWidget):
     def paintEvent(self, event):
         painter = QPainter(self)
         painter.fillRect(event.rect(), Qt.lightGray)
-
+        painter.setPen(Qt.black)
         block = QTextBlock(self.editor.firstVisibleBlock())
         blockNumber = block.blockNumber()
         top = int(self.editor.blockBoundingGeometry(block).translated(self.editor.contentOffset()).top())
@@ -159,7 +170,6 @@ class LineNumber(QWidget):
         while block.isValid() and (top <= event.rect().bottom()):
             if block.isVisible() and (bottom >= event.rect().top()):
                 number = QString.number(blockNumber + 1)
-                painter.setPen(Qt.black)
                 painter.drawText(0, top, self.width() - 4, self.editor.fontMetrics().height(),
                                  Qt.AlignRight, number)
 
