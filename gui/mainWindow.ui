@@ -90,6 +90,8 @@
     <addaction name="actionShow_Output"/>
     <addaction name="actionShow_Source"/>
     <addaction name="actionSelect_Editor_Font"/>
+    <addaction name="separator"/>
+    <addaction name="actionSpellcheck"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -422,6 +424,17 @@
    </property>
    <property name="text">
     <string>Select Editor Font</string>
+   </property>
+  </action>
+  <action name="actionSpellcheck">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Enable Spellcheck</string>
    </property>
   </action>
  </widget>
