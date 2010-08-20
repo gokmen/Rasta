@@ -11,6 +11,7 @@ Rasta TODO
  - Add HTML print support
  - Add save as HTML support (çohönemli)
  - Remove piksemel dependency
+ - Find a way to block not supported files
 
  ✔ Add a shiny highlight method for setCurrentLine
  ✔ Add zemberek spell-check support
