@@ -144,7 +144,7 @@ class Rasta(QMainWindow):
                     add = '\n' * 2
                 cursor.beginEditBlock()
                 cursor.removeSelectedText()
-		cursor.insertText("%s%s\n%s\n" % (add, selection, (header * len(selection))))
+                cursor.insertText("%s%s\n%s\n" % (add, selection, (header * len(selection))))
                 cursor.endEditBlock()
 
             if marker:
