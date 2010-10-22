@@ -40,17 +40,24 @@
      <x>0</x>
      <y>0</y>
      <width>833</width>
-     <height>23</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>&amp;File</string>
     </property>
+    <widget class="QMenu" name="menuExport_As">
+     <property name="title">
+      <string>Export As</string>
+     </property>
+     <addaction name="actionExportHTML"/>
+    </widget>
     <addaction name="actionNew"/>
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
     <addaction name="actionSave_As"/>
+    <addaction name="menuExport_As"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
@@ -435,6 +442,11 @@
    </property>
    <property name="text">
     <string>Enable Spellcheck</string>
+   </property>
+  </action>
+  <action name="actionExportHTML">
+   <property name="text">
+    <string>HTML</string>
    </property>
   </action>
  </widget>

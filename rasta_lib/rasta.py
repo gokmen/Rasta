@@ -30,6 +30,8 @@ class Rasta(QMainWindow):
 
         self.setUnifiedTitleAndToolBarOnMac(True)
 
+        self._latest_html = None
+
         # System settings
         self.settings = QSettings()
         self.readSettings()
@@ -77,6 +79,7 @@ class Rasta(QMainWindow):
             model = LogTableModel(logs, self)
             self.ui.logs.setModel(model)
             self.ui.logs.resizeColumnsToContents()
+            self._latest_html = html
             self.ui.webView.setHtml(unicode(html, 'UTF-8'))
             if len(logs) > 0:
                 self.ui.Logs.show()
@@ -206,6 +209,35 @@ class Rasta(QMainWindow):
         self.setWindowTitle('Rasta :: %s' % self.file_name)
         return True
 
+    def exportFile(self):
+        ftype = None
+        if self.sender() == self.ui.actionExportHTML:
+            ftype = 'html'
+
+        if ftype:
+            get_new_file_name = QFileDialog.getSaveFileName(self,
+                                                            _('Save File'))
+            if not get_new_file_name.isEmpty():
+                export_name = get_new_file_name
+            else:
+                return
+
+            file_object = QFile(export_name)
+            if (not file_object.open(QFile.WriteOnly | QFile.Text)):
+                QMessageBox.warning(self, 'Rasta',
+                                    QString(_('Cannot write file %1:\n%2.'))
+                                    .arg(export_name)
+                                    .arg(file_object.errorString()))
+                return False
+
+            out = QTextStream(file_object)
+            QApplication.setOverrideCursor(Qt.WaitCursor)
+            self.updateRst()
+            out << self._latest_html
+            QApplication.restoreOverrideCursor()
+            return True
+
+
     ## Some Dialogs
 
     def showFontDialog(self):
@@ -306,6 +338,7 @@ class Rasta(QMainWindow):
         self.ui.actionOpen.triggered.connect(self.fileOpen)
         self.ui.actionSave.triggered.connect(self.saveFile)
         self.ui.actionSave_As.triggered.connect(self.saveFile)
+        self.ui.actionExportHTML.triggered.connect(self.exportFile)
         self.ui.actionNew.triggered.connect(self.newFile)
         self.ui.actionUpdate_Now.triggered.connect(self.updateRst)
         self.ui.actionShow_Logs.toggled.connect(self.ui.Logs.setVisible)

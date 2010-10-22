@@ -9,10 +9,10 @@ Rasta TODO
  - Add 80 character wrap function
  - Find/Replace support
  - Add HTML print support
- - Add save as HTML support (çohönemli)
  - Remove piksemel dependency
  - Find a way to block not supported files
 
+ ✔ Add save as HTML support (çohönemli)
  ✔ Add a shiny highlight method for setCurrentLine
  ✔ Add zemberek spell-check support
  ✔ Include file name in window title
