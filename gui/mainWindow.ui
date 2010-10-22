@@ -40,7 +40,7 @@
      <x>0</x>
      <y>0</y>
      <width>833</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -66,6 +66,14 @@
     <property name="title">
      <string>&amp;Edit</string>
     </property>
+    <widget class="QMenu" name="menuHeader">
+     <property name="title">
+      <string>Header</string>
+     </property>
+     <addaction name="actionSymbol_1"/>
+     <addaction name="actionSymbol_2"/>
+     <addaction name="actionSymbol_3"/>
+    </widget>
     <addaction name="actionUndo"/>
     <addaction name="actionRedo"/>
     <addaction name="separator"/>
@@ -74,7 +82,7 @@
     <addaction name="actionCode"/>
     <addaction name="separator"/>
     <addaction name="actionLink"/>
-    <addaction name="actionHeader"/>
+    <addaction name="menuHeader"/>
     <addaction name="separator"/>
     <addaction name="actionAdd_Table"/>
    </widget>
@@ -333,16 +341,16 @@
     <string>Ctrl+L</string>
    </property>
   </action>
-  <action name="actionHeader">
+  <action name="actionSubheader">
    <property name="icon">
     <iconset resource="../rasta_lib/icons.qrc">
      <normaloff>:/icons/format-text-underline.png</normaloff>:/icons/format-text-underline.png</iconset>
    </property>
    <property name="text">
-    <string>Header</string>
+    <string>Subheader</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+H</string>
+    <string>Ctrl+Shift+H</string>
    </property>
   </action>
   <action name="actionAdd_Table">
@@ -435,6 +443,21 @@
    </property>
    <property name="text">
     <string>Enable Spellcheck</string>
+   </property>
+  </action>
+  <action name="actionSymbol_1">
+   <property name="text">
+    <string>Symbol 1 : (~)</string>
+   </property>
+  </action>
+  <action name="actionSymbol_2">
+   <property name="text">
+    <string>Symbol 2 : (*)</string>
+   </property>
+  </action>
+  <action name="actionSymbol_3">
+   <property name="text">
+    <string>Symbol 3 : (-)</string>
    </property>
   </action>
  </widget>

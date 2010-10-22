@@ -106,6 +106,7 @@ class Rasta(QMainWindow):
     def editTrigger(self):
         ''' If user clicks some of edit action it calls this method '''
         marker = None
+        header = None
         cursor = self.ui.textEdit.textCursor()
         if cursor.hasSelection():
             selection = cursor.selectedText()
@@ -127,13 +128,20 @@ class Rasta(QMainWindow):
                     cursor.insertText("`%s <%s>`_" % (selection, link))
                     cursor.endEditBlock()
 
-            elif self.sender() == self.ui.actionHeader:
+            elif self.sender() == self.ui.actionSymbol_1:
+                 header = '~'
+            elif self.sender() == self.ui.actionSymbol_2:
+                 header = '*'
+            elif self.sender() == self.ui.actionSymbol_3:
+                 header = '-'
+
+            if header:
                 add = ''
                 if not cursor.position() - len(selection) == 0:
                     add = '\n' * 2
                 cursor.beginEditBlock()
                 cursor.removeSelectedText()
-                cursor.insertText("%s%s\n%s\n" % (add, selection, ('-' * len(selection))))
+		cursor.insertText("%s%s\n%s\n" % (add, selection, (header * len(selection))))
                 cursor.endEditBlock()
 
             if marker:
@@ -298,7 +306,6 @@ class Rasta(QMainWindow):
         self.ui.toolBar.addAction(self.ui.actionCode)
         self.ui.toolBar.addSeparator()
         self.ui.toolBar.addAction(self.ui.actionLink)
-        self.ui.toolBar.addAction(self.ui.actionHeader)
         self.ui.toolBar.addSeparator()
         self.ui.toolBar.addAction(self.ui.actionAdd_Table)
 
@@ -315,7 +322,9 @@ class Rasta(QMainWindow):
         self.ui.actionBold.triggered.connect(self.editTrigger)
         self.ui.actionItalic.triggered.connect(self.editTrigger)
         self.ui.actionCode.triggered.connect(self.editTrigger)
-        self.ui.actionHeader.triggered.connect(self.editTrigger)
+        self.ui.actionSymbol_1.triggered.connect(self.editTrigger)
+        self.ui.actionSymbol_2.triggered.connect(self.editTrigger)
+        self.ui.actionSymbol_3.triggered.connect(self.editTrigger)
         self.ui.actionLink.triggered.connect(self.editTrigger)
         self.ui.actionAdd_Table.triggered.connect(self.addTable)
         self.ui.actionRst_Howto.triggered.connect(self.showHelp)
