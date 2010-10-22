@@ -127,6 +127,15 @@ class Rasta(QMainWindow):
                     cursor.insertText("`%s <%s>`_" % (selection, link))
                     cursor.endEditBlock()
 
+            elif self.sender() == self.ui.actionHeader:
+                add = ''
+                if not cursor.position() - len(selection) == 0:
+                    add = '\n' * 2
+                cursor.beginEditBlock()
+                cursor.removeSelectedText()
+                cursor.insertText("%s%s\n%s\n" % (add, selection, ('-' * len(selection))))
+                cursor.endEditBlock()
+
             if marker:
                 cursor.beginEditBlock()
                 cursor.removeSelectedText()
