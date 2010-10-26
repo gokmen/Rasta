@@ -12,6 +12,7 @@ Rasta TODO
  - Remove piksemel dependency
  - Find a way to block not supported files
 
+ ✔ Save last scroll position in webview
  ✔ Add save as HTML support (çohönemli)
  ✔ Add a shiny highlight method for setCurrentLine
  ✔ Add zemberek spell-check support

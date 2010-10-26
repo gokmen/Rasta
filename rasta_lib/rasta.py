@@ -54,6 +54,7 @@ class Rasta(QMainWindow):
         if self.ui.actionLive_Update.isChecked() or\
                 self.sender() == self.ui.actionUpdate_Now or\
                 source or force:
+            self.last_scroll_position = self.ui.webView.page().mainFrame().scrollBarValue(Qt.Vertical)
             if not source:
                 source = unicode(self.ui.textEdit.toPlainText())
 
@@ -81,6 +82,7 @@ class Rasta(QMainWindow):
             self.ui.logs.resizeColumnsToContents()
             self._latest_html = html
             self.ui.webView.setHtml(unicode(html, 'UTF-8'))
+            self.ui.webView.page().mainFrame().setScrollBarValue(Qt.Vertical, self.last_scroll_position)
             if len(logs) > 0:
                 self.ui.Logs.show()
             else:
