@@ -40,7 +40,7 @@
      <x>0</x>
      <y>0</y>
      <width>833</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -92,6 +92,8 @@
     <addaction name="menuHeader"/>
     <addaction name="separator"/>
     <addaction name="actionAdd_Table"/>
+    <addaction name="separator"/>
+    <addaction name="actionWrap_Text"/>
    </widget>
    <widget class="QMenu" name="menuOptions">
     <property name="title">
@@ -454,7 +456,7 @@
   </action>
   <action name="actionExportHTML">
    <property name="text">
-       <string>HTML</string>
+    <string>HTML</string>
    </property>
   </action>
   <action name="actionSymbol_1">
@@ -470,6 +472,11 @@
   <action name="actionSymbol_3">
    <property name="text">
     <string>Symbol 3 : (-)</string>
+   </property>
+  </action>
+  <action name="actionWrap_Text">
+   <property name="text">
+    <string>Wrap Text</string>
    </property>
   </action>
  </widget>

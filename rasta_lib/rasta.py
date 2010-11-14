@@ -363,6 +363,7 @@ class Rasta(QMainWindow):
         self.ui.actionLink.triggered.connect(self.editTrigger)
         self.ui.actionAdd_Table.triggered.connect(self.addTable)
         self.ui.actionRst_Howto.triggered.connect(self.showHelp)
+        self.ui.actionWrap_Text.triggered.connect(self.ui.textEdit.wrapText)
         self.ui.actionSelect_Editor_Font.triggered.connect(self.showFontDialog)
         self.ui.actionAbout.triggered.connect(self.showAbout)
         self.ui.textEdit.textChanged.connect(self.updateRst)

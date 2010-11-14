@@ -24,6 +24,20 @@ from PyQt4.QtCore import pyqtSignal, QChar, QPropertyAnimation
 import gettext
 _ = gettext.translation('rasta', fallback=True).ugettext
 
+def wrap(text, limit = 80):
+    import textwrap
+    result = ''
+
+    for line in text.splitlines():
+        if len(line) > limit:
+            lines = textwrap.wrap(line, limit)
+            result += '\n'.join(lines)
+            result += '\n'
+        else:
+            result += '%s\n' % line
+
+    return result
+
 class RstTextEdit(QPlainTextEdit):
 
     def __init__(self, *args):
@@ -67,6 +81,19 @@ class RstTextEdit(QPlainTextEdit):
                 self.setTextCursor(cursor)
                 break
             block = block.next()
+
+    def wrapText(self, width = 80):
+        cursor = self.textCursor()
+        current_text = self.toPlainText()
+        current_pos  = cursor.position()
+
+        cursor.beginEditBlock()
+        cursor.select(QTextCursor.Document)
+        cursor.removeSelectedText()
+        cursor.insertText(wrap(unicode(current_text)))
+        cursor.endEditBlock()
+
+        cursor.setPosition(current_pos, QTextCursor.MoveAnchor)
 
     def highlightCurrentLine(self):
         extraSelections = []
