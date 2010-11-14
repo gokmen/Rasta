@@ -57,6 +57,8 @@ class RstTextEdit(QPlainTextEdit):
         QPlainTextEdit.mousePressEvent(self, event)
 
     def setCurrentLine(self, line):
+        # Hacky, but works.
+        self.verticalScrollBar().setValue(0)
         block = QTextBlock(self.firstVisibleBlock())
         while block.isValid():
             if block.blockNumber() == line:
