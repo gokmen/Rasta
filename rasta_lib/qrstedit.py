@@ -90,13 +90,7 @@ class RstTextEdit(QPlainTextEdit):
             block = block.next()
 
     def wrapText(self, width = 80):
-        cursor = self.textCursor()
-        current_text = cursor.selectedText()
-
-        cursor.beginEditBlock()
-        cursor.removeSelectedText()
-        cursor.insertText(wrap(unicode(current_text)))
-        cursor.endEditBlock()
+        self.correctWord(wrap(unicode(self.textCursor().selectedText())))
 
     def highlightCurrentLine(self):
         extraSelections = []
