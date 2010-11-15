@@ -96,16 +96,19 @@ class Rasta(QMainWindow):
         char_format.setFontFixedPitch(True)
         cursor.setCharFormat(char_format)
         row = QInputDialog.getInteger(self,
-                _('Add Table'), _('Number of rows :'))
+                _('Add Table'), _('Number of rows :'), 1)
         if row[1]:
             column = QInputDialog.getInteger(self, _('Add Table'),
-                    _('Number of columns :'))
+                    _('Number of columns :'), 1)
             if column[1]:
-                cursor.insertText('\n')
-                for times in range(row[0]):
-                    cursor.insertText('%s+\n' % ('+-------' * column[0]))
-                    cursor.insertText('%s|\n' % ('|       ' * column[0]))
-                cursor.insertText('%s+\n' % ('+-------' * column[0]))
+                cell_size = QInputDialog.getInteger(self, _('Add Table'),
+                            _('Cell size :'), 8)
+                if cell_size[1]:
+                    cursor.insertText('\n')
+                    for times in range(row[0]):
+                        cursor.insertText('%s+\n' % ('+%s' % ('-' * cell_size[0]) * column[0]))
+                        cursor.insertText('%s|\n' % ('|%s' % (' ' * cell_size[0]) * column[0]))
+                    cursor.insertText('%s+\n' % ('+%s' % ('-' * cell_size[0]) * column[0]))
         cursor.endEditBlock()
 
     def editTrigger(self):
