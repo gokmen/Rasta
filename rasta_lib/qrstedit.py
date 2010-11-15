@@ -18,7 +18,6 @@ import sys
 import enchant
 
 from PyQt4.Qt import *
-from PyQt4.QtCore import pyqtSignal, QChar, QPropertyAnimation
 
 # i18n Support
 import gettext
@@ -162,7 +161,6 @@ class RstTextEdit(QPlainTextEdit):
         painter.drawLine(cw, 0, cw, self.height())
         painter.end()
         QPlainTextEdit.paintEvent(self, event)
-
 
 class LineNumber(QWidget):
 

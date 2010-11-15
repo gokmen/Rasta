@@ -82,7 +82,7 @@ class Rasta(QMainWindow):
             self._latest_html = html
             self.ui.webView.setHtml(unicode(html, 'UTF-8'))
             self.ui.webView.page().mainFrame().setScrollBarValue(Qt.Vertical, self.last_scroll_position)
-            if len(logs) > 0:
+            if len(logs) > 0 and self.ui.actionShow_Logs.isChecked():
                 self.ui.Logs.show()
             else:
                 self.ui.Logs.hide()
