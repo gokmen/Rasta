@@ -141,9 +141,7 @@ class Rasta(QMainWindow):
                  header = '-'
 
             if header:
-                add = ''
-                if not cursor.position() - len(selection) == 0:
-                    add = '\n' * 2
+                add = '' if cursor.positionInBlock() - len(selection) == 0 else '\n' * 2
                 cursor.beginEditBlock()
                 cursor.removeSelectedText()
                 cursor.insertText("%s%s\n%s\n" % (add, selection, (header * len(selection))))
