@@ -162,7 +162,7 @@ class Rasta(QMainWindow):
         if self.checkModified():
             self.ui.textEdit.clear()
             self.file_name = TMPFILE
-        self.setWindowTitle('Rasta :: %s' % self.file_name)
+        self.setWindowTitle('Rasta - %s' % self.file_name)
 
     def fileOpen(self):
         ''' It shows Open File dialog '''
@@ -174,7 +174,7 @@ class Rasta(QMainWindow):
     def loadFile(self, file_name, parse_string=False):
         ''' Load given file and show it in QSci component '''
         file_object = QFile(file_name)
-        if (not file_object.open(QFile.ReadOnly | QFile.Text)):
+        if not file_object.open(QFile.ReadOnly | QFile.Text):
             QMessageBox.warning(self, 'Rasta',
                                  QString(_('Cannot read file %1:\n%2.'))
                                  .arg(file_name)
