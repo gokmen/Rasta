@@ -121,6 +121,12 @@ class Rasta(QMainWindow):
                 marker = '*'
             elif self.sender() == self.ui.actionCode:
                 marker = '``'
+            elif self.sender() == self.ui.actionSymbol_1:
+                 header = '~'
+            elif self.sender() == self.ui.actionSymbol_2:
+                 header = '*'
+            elif self.sender() == self.ui.actionSymbol_3:
+                 header = '-'
             elif self.sender() == self.ui.actionLink:
                 link, res = QInputDialog.getText(self,
                         _('Insert Link'), _('Address :'))
@@ -132,13 +138,6 @@ class Rasta(QMainWindow):
                     cursor.removeSelectedText()
                     cursor.insertText("`%s <%s>`_" % (selection, link))
                     cursor.endEditBlock()
-
-            elif self.sender() == self.ui.actionSymbol_1:
-                 header = '~'
-            elif self.sender() == self.ui.actionSymbol_2:
-                 header = '*'
-            elif self.sender() == self.ui.actionSymbol_3:
-                 header = '-'
 
             if header:
                 add = '' if cursor.positionInBlock() - len(selection) == 0 else '\n' * 2
