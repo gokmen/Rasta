@@ -24,6 +24,7 @@ Install all the required packages and then::
 
 For Developers:
 ===============
+
 After modifying the ui file you need to update pythonic ui file too::
 
     $ pyuic4 gui/mainWindow.ui -o rasta_lib/mainWindow.py

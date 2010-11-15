@@ -168,28 +168,30 @@ class Rasta(QMainWindow):
         ''' It shows Open File dialog '''
         if self.checkModified():
             file_name = QFileDialog.getOpenFileName(self)
-            if (not file_name.isEmpty()):
+            if not file_name.isEmpty():
                 self.loadFile(file_name)
 
     def loadFile(self, file_name, parse_string=False):
         ''' Load given file and show it in QSci component '''
-        file_object = QFile(file_name)
-        if not file_object.open(QFile.ReadOnly | QFile.Text):
+        try:
+            file_object = file(file_name, 'r')
+        except Exception, msg:
             QMessageBox.warning(self, 'Rasta',
-                                 QString(_('Cannot read file %1:\n%2.'))
-                                 .arg(file_name)
-                                 .arg(file_object.errorString()))
+                                QString(_('Cannot read file %1:\n%2.'))
+                                .arg(file_name)
+                                .arg(msg))
             return
+
         self.file_name = file_name
-        content = QTextStream(file_object)
+        content = unicode(file_object.read())
         QApplication.setOverrideCursor(Qt.WaitCursor)
-        file_content = content.readAll()
         QApplication.restoreOverrideCursor()
         if parse_string:
-            return unicode(file_content)
-        self.ui.textEdit.setPlainText(file_content)
+            return content
+        self.ui.textEdit.setPlainText(content)
         self.ui.textEdit.document().setModified(False)
         self.setWindowTitle('Rasta :: %s' % file_name)
+        file_object.close()
 
     def resizeEvent(self, event):
         self.ui.textEdit.lineNumber.resizeEvent(event)
@@ -197,26 +199,25 @@ class Rasta(QMainWindow):
     def saveFile(self):
         ''' File save operation '''
         if self.file_name == TMPFILE or self.sender() == self.ui.actionSave_As:
-            get_new_file_name = QFileDialog.getSaveFileName(self,
-                                                            _('Save File'))
+            get_new_file_name = QFileDialog.getSaveFileName(self, _('Save File'))
             if not get_new_file_name.isEmpty():
                 self.file_name = get_new_file_name
             else:
                 return
-        file_object = QFile(self.file_name)
-        if (not file_object.open(QFile.WriteOnly | QFile.Text)):
+        try:
+            file_object = file(self.file_name, 'w')
+        except Exception, msg:
             QMessageBox.warning(self, 'Rasta',
                                 QString(_('Cannot write file %1:\n%2.'))
                                 .arg(self.file_name)
-                                .arg(file_object.errorString()))
+                                .arg(msg))
             return False
-
-        out = QTextStream(file_object)
         QApplication.setOverrideCursor(Qt.WaitCursor)
-        out << self.ui.textEdit.toPlainText()
+        file_object.write(self.ui.textEdit.toPlainText())
         QApplication.restoreOverrideCursor()
         self.ui.textEdit.document().setModified(False)
         self.setWindowTitle('Rasta :: %s' % self.file_name)
+        file_object.close()
         return True
 
     def exportFile(self):
@@ -232,21 +233,21 @@ class Rasta(QMainWindow):
             else:
                 return
 
-            file_object = QFile(export_name)
-            if (not file_object.open(QFile.WriteOnly | QFile.Text)):
+            try:
+                file_object = file(export_name, 'w')
+            except Exception, msg:
                 QMessageBox.warning(self, 'Rasta',
                                     QString(_('Cannot write file %1:\n%2.'))
                                     .arg(export_name)
-                                    .arg(file_object.errorString()))
+                                    .arg(msg))
                 return False
 
-            out = QTextStream(file_object)
             QApplication.setOverrideCursor(Qt.WaitCursor)
             self.updateRst()
-            out << self._latest_html
+            file_object.write(self._latest_html)
+            file_object.close()
             QApplication.restoreOverrideCursor()
             return True
-
 
     ## Some Dialogs
 
