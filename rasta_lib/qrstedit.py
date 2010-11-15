@@ -9,8 +9,8 @@
 # Software Foundation; either version 2 of the License, or (at your option)
 # any later version.
 
-# RstTextEdit Widget based on John Schember 's (2009) SpellText Edit
-# which has MIT license
+# RstTextEdit Widget based on John Schember 's (2009) SpellText Edit which has
+# MIT License
 
 import re
 import sys
@@ -54,6 +54,14 @@ class RstTextEdit(QPlainTextEdit):
 
         insertShortcut = QShortcut(Qt.Key_Insert, self)
         insertShortcut.activated.connect(lambda: self.setOverwriteMode(not self.overwriteMode()))
+
+    def addFlag(self, line):
+        if not line in self.lineNumber._flaged_lines:
+            self.lineNumber._flaged_lines.append(line)
+            self.lineNumber.update()
+
+    def clearFlags(self):
+        self.lineNumber._flaged_lines = []
 
     def toggleSpellChecking(self):
         if not self.highlighter.dict:
@@ -165,7 +173,7 @@ class LineNumber(QWidget):
         self.editor = editor
         self.editor.blockCountChanged.connect(self.updateAreaWidth)
         self.editor.updateRequest.connect(self.updateLineNumber)
-
+        self._flaged_lines = []
         self.updateAreaWidth()
 
     def resizeEvent(self, event):
@@ -193,7 +201,8 @@ class LineNumber(QWidget):
         while max_ >= 1000:
             max_ /= 1000
             digits += 1
-        return 10 + self.editor.fontMetrics().width(QChar('9')) * digits
+        # padding = 10 if len(self._flaged_lines) == 0 else 26
+        return 26 + self.editor.fontMetrics().width(QChar('9')) * digits
 
     def paintEvent(self, event):
         painter = QPainter(self)
@@ -208,6 +217,8 @@ class LineNumber(QWidget):
                 number = QString.number(blockNumber + 1)
                 painter.drawText(0, top, self.width() - 4, self.editor.fontMetrics().height(),
                                  Qt.AlignRight, number)
+                if blockNumber + 1 in self._flaged_lines:
+                    painter.drawPixmap(0, top, QPixmap(':/icons/warning.png'))
 
             block = block.next()
             top = bottom

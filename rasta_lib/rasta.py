@@ -64,7 +64,7 @@ class Rasta(QMainWindow):
             PUB.apply_transforms()
 
             logs = []
-            # self.ui.textEdit.markerDeleteAll(31)
+            self.ui.textEdit.clearFlags()
             for node in PUB.document.traverse(docutils.nodes.problematic):
                 node.parent.replace(node, node.children[0])
             for node in PUB.document.traverse(docutils.nodes.system_message):
@@ -72,8 +72,7 @@ class Rasta(QMainWindow):
                 node.parent.remove(node)
                 logs.append(log)
                 line = int(log[0])
-                # if self.ui.textEdit.lines() >= line:
-                    # self.ui.textEdit.markerAdd(line-1, 31)
+                self.ui.textEdit.addFlag(line)
 
             html = PUB.writer.write(PUB.document, PUB.destination)
 
@@ -87,6 +86,7 @@ class Rasta(QMainWindow):
                 self.ui.Logs.show()
             else:
                 self.ui.Logs.hide()
+            self.ui.textEdit.lineNumber.update()
 
     def addTable(self):
         ''' Add Rst style table '''
