@@ -8,180 +8,213 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-24 15:19+0300\n"
+"POT-Creation-Date: 2010-12-30 23:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/mainWindow.py:223 .tmp/rasta.py:205
+#: .tmp/mainWindow.py:255 .tmp/rasta.py:260
 msgid "Rasta the Rst Editor"
 msgstr ""
 
-#: .tmp/mainWindow.py:224
+#: .tmp/mainWindow.py:256
 msgid "&File"
 msgstr ""
 
-#: .tmp/mainWindow.py:225
-msgid "Help"
-msgstr ""
-
-#: .tmp/mainWindow.py:226
-msgid "&Edit"
-msgstr ""
-
-#: .tmp/mainWindow.py:227
-msgid "&Options"
-msgstr ""
-
-#: .tmp/mainWindow.py:228
-msgid "Logs"
-msgstr ""
-
-#: .tmp/mainWindow.py:229
-msgid "Editor Tools"
-msgstr ""
-
-#: .tmp/mainWindow.py:230
-msgid "Open"
-msgstr ""
-
-#: .tmp/mainWindow.py:231
-msgid "Ctrl+O"
-msgstr ""
-
-#: .tmp/mainWindow.py:232
-msgid "Save"
-msgstr ""
-
-#: .tmp/mainWindow.py:233
-msgid "Ctrl+S"
-msgstr ""
-
-#: .tmp/mainWindow.py:234
-msgid "Save As"
-msgstr ""
-
-#: .tmp/mainWindow.py:235
-msgid "Exit"
-msgstr ""
-
-#: .tmp/mainWindow.py:236
-msgid "Ctrl+Q"
-msgstr ""
-
-#: .tmp/mainWindow.py:237
-msgid "Build on the fly"
-msgstr ""
-
-#: .tmp/mainWindow.py:238
-msgid "It can be slow.."
-msgstr ""
-
-#: .tmp/mainWindow.py:239
-msgid "Build"
-msgstr ""
-
-#: .tmp/mainWindow.py:240
-msgid "F5"
-msgstr ""
-
-#: .tmp/mainWindow.py:241
-msgid "Rst Howto"
-msgstr ""
-
-#: .tmp/mainWindow.py:242
-msgid "F1"
-msgstr ""
-
-#: .tmp/mainWindow.py:243
-msgid "About"
-msgstr ""
-
-#: .tmp/mainWindow.py:244
-msgid "New"
-msgstr ""
-
-#: .tmp/mainWindow.py:245
-msgid "Ctrl+N"
-msgstr ""
-
-#: .tmp/mainWindow.py:246
-msgid "Show Logs"
-msgstr ""
-
-#: .tmp/mainWindow.py:247
-msgid "F2"
-msgstr ""
-
-#: .tmp/mainWindow.py:248
-msgid "Bold"
-msgstr ""
-
-#: .tmp/mainWindow.py:249
-msgid "Ctrl+B"
-msgstr ""
-
-#: .tmp/mainWindow.py:250
-msgid "Italic"
-msgstr ""
-
-#: .tmp/mainWindow.py:251
-msgid "Ctrl+I"
-msgstr ""
-
-#: .tmp/mainWindow.py:252
-msgid "Link"
-msgstr ""
-
-#: .tmp/mainWindow.py:253
-msgid "Ctrl+L"
-msgstr ""
-
-#: .tmp/mainWindow.py:254
-msgid "Header"
-msgstr ""
-
-#: .tmp/mainWindow.py:255
-msgid "Ctrl+H"
-msgstr ""
-
-#: .tmp/mainWindow.py:256 .tmp/rasta.py:94 .tmp/rasta.py:96
-msgid "Add Table"
-msgstr ""
-
 #: .tmp/mainWindow.py:257
-msgid "Undo"
+msgid "Export As"
 msgstr ""
 
 #: .tmp/mainWindow.py:258
-msgid "Redo"
+msgid "Help"
 msgstr ""
 
 #: .tmp/mainWindow.py:259
-msgid "Code"
+msgid "&Edit"
 msgstr ""
 
 #: .tmp/mainWindow.py:260
-msgid "Show Output"
+msgid "Header"
 msgstr ""
 
 #: .tmp/mainWindow.py:261
-msgid "F3"
+msgid "&Options"
 msgstr ""
 
 #: .tmp/mainWindow.py:262
-msgid "Show Source"
+msgid "Logs"
 msgstr ""
 
 #: .tmp/mainWindow.py:263
-msgid "F4"
+msgid "Editor Tools"
 msgstr ""
 
 #: .tmp/mainWindow.py:264
+msgid "Open"
+msgstr ""
+
+#: .tmp/mainWindow.py:265
+msgid "Ctrl+O"
+msgstr ""
+
+#: .tmp/mainWindow.py:266
+msgid "Save"
+msgstr ""
+
+#: .tmp/mainWindow.py:267
+msgid "Ctrl+S"
+msgstr ""
+
+#: .tmp/mainWindow.py:268
+msgid "Save As"
+msgstr ""
+
+#: .tmp/mainWindow.py:269
+msgid "Exit"
+msgstr ""
+
+#: .tmp/mainWindow.py:270
+msgid "Ctrl+Q"
+msgstr ""
+
+#: .tmp/mainWindow.py:271
+msgid "Build on the fly"
+msgstr ""
+
+#: .tmp/mainWindow.py:272
+msgid "It can be slow.."
+msgstr ""
+
+#: .tmp/mainWindow.py:273
+msgid "Build"
+msgstr ""
+
+#: .tmp/mainWindow.py:274
+msgid "F5"
+msgstr ""
+
+#: .tmp/mainWindow.py:275
+msgid "Rst Howto"
+msgstr ""
+
+#: .tmp/mainWindow.py:276
+msgid "F1"
+msgstr ""
+
+#: .tmp/mainWindow.py:277
+msgid "About"
+msgstr ""
+
+#: .tmp/mainWindow.py:278
+msgid "New"
+msgstr ""
+
+#: .tmp/mainWindow.py:279
+msgid "Ctrl+N"
+msgstr ""
+
+#: .tmp/mainWindow.py:280
+msgid "Show Logs"
+msgstr ""
+
+#: .tmp/mainWindow.py:281
+msgid "F2"
+msgstr ""
+
+#: .tmp/mainWindow.py:282
+msgid "Bold"
+msgstr ""
+
+#: .tmp/mainWindow.py:283
+msgid "Ctrl+B"
+msgstr ""
+
+#: .tmp/mainWindow.py:284
+msgid "Italic"
+msgstr ""
+
+#: .tmp/mainWindow.py:285
+msgid "Ctrl+I"
+msgstr ""
+
+#: .tmp/mainWindow.py:286
+msgid "Link"
+msgstr ""
+
+#: .tmp/mainWindow.py:287
+msgid "Ctrl+L"
+msgstr ""
+
+#: .tmp/mainWindow.py:288
+msgid "Subheader"
+msgstr ""
+
+#: .tmp/mainWindow.py:289
+msgid "Ctrl+Shift+H"
+msgstr ""
+
+#: .tmp/mainWindow.py:290 .tmp/rasta.py:99 .tmp/rasta.py:101 .tmp/rasta.py:104
+msgid "Add Table"
+msgstr ""
+
+#: .tmp/mainWindow.py:291
+msgid "Undo"
+msgstr ""
+
+#: .tmp/mainWindow.py:292
+msgid "Redo"
+msgstr ""
+
+#: .tmp/mainWindow.py:293
+msgid "Code"
+msgstr ""
+
+#: .tmp/mainWindow.py:294
+msgid "Show Output"
+msgstr ""
+
+#: .tmp/mainWindow.py:295
+msgid "F3"
+msgstr ""
+
+#: .tmp/mainWindow.py:296
+msgid "Show Source"
+msgstr ""
+
+#: .tmp/mainWindow.py:297
+msgid "F4"
+msgstr ""
+
+#: .tmp/mainWindow.py:298
 msgid "Select Editor Font"
+msgstr ""
+
+#: .tmp/mainWindow.py:299
+msgid "Enable Spellcheck"
+msgstr ""
+
+#: .tmp/mainWindow.py:300
+msgid "HTML"
+msgstr ""
+
+#: .tmp/mainWindow.py:301
+msgid "Symbol 1 : (~)"
+msgstr ""
+
+#: .tmp/mainWindow.py:302
+msgid "Symbol 2 : (*)"
+msgstr ""
+
+#: .tmp/mainWindow.py:303
+msgid "Symbol 3 : (-)"
+msgstr ""
+
+#: .tmp/mainWindow.py:304
+msgid "Wrap Text"
 msgstr ""
 
 #: .tmp/model.py:26
@@ -192,7 +225,7 @@ msgstr ""
 msgid "Message"
 msgstr ""
 
-#: .tmp/qrstedit.py:76
+#: .tmp/qrstedit.py:123
 msgid "Spelling Suggestions"
 msgstr ""
 
@@ -207,39 +240,43 @@ msgid ""
 " --hide-source  : Hide source window\n"
 msgstr ""
 
-#: .tmp/rasta.py:94
+#: .tmp/rasta.py:99
 msgid "Number of rows :"
 msgstr ""
 
-#: .tmp/rasta.py:97
+#: .tmp/rasta.py:102
 msgid "Number of columns :"
 msgstr ""
 
-#: .tmp/rasta.py:120
+#: .tmp/rasta.py:105
+msgid "Cell size :"
+msgstr ""
+
+#: .tmp/rasta.py:135
 msgid "Insert Link"
 msgstr ""
 
-#: .tmp/rasta.py:120
+#: .tmp/rasta.py:135
 msgid "Address :"
 msgstr ""
 
-#: .tmp/rasta.py:157
+#: .tmp/rasta.py:180
 msgid ""
 "Cannot read file %1:\n"
 "%2."
 msgstr ""
 
-#: .tmp/rasta.py:176
+#: .tmp/rasta.py:202 .tmp/rasta.py:230
 msgid "Save File"
 msgstr ""
 
-#: .tmp/rasta.py:184
+#: .tmp/rasta.py:211 .tmp/rasta.py:240
 msgid ""
 "Cannot write file %1:\n"
 "%2."
 msgstr ""
 
-#: .tmp/rasta.py:206
+#: .tmp/rasta.py:261
 msgid ""
 "Live view supported Qt4 based Webkit integrated Rst editor for Pardus "
 "Developers and all others.\n"
@@ -247,7 +284,7 @@ msgid ""
 " Author: Gökmen Göksel <gokmeng@gmail.com>"
 msgstr ""
 
-#: .tmp/rasta.py:323
+#: .tmp/rasta.py:387
 msgid ""
 "The document has been modified.\n"
 "Do you want to save your changes?"
