@@ -33,8 +33,8 @@ PROJECT_LIB = 'rasta_lib'
 def update_messages():
     os.system('rm -rf .tmp')
     os.makedirs('.tmp')
-    os.system('pyuic4 gui/mainWindow.ui -o %s/mainWindow.py -g %s' %
-             (PROJECT_LIB, PROJECT))
+    os.system('pyuic4 gui/mainWindow.ui -o %s/mainWindow.py' %
+             (PROJECT_LIB))
     os.system('cp -R %s/*.py .tmp/' % PROJECT_LIB)
     os.system('cp rasta .tmp/rasta-app.py')
     os.system('ls .tmp/* | xargs xgettext --default-domain=%s '
@@ -64,8 +64,8 @@ class Clean(clean):
 class Build(build):
     def run(self):
         print 'Building ...'
-        os.system('pyuic4 gui/mainWindow.ui -o %s/mainWindow.py -g %s' %
-             (PROJECT_LIB, PROJECT))
+        os.system('pyuic4 gui/mainWindow.ui -o %s/mainWindow.py' %
+             (PROJECT_LIB))
         os.system('pyrcc4 %s/icons.qrc -o %s/icons_rc.py' %
                  (PROJECT_LIB, PROJECT_LIB))
         build.run(self)

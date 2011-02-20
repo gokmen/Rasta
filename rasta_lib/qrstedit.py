@@ -15,7 +15,11 @@
 import re
 import sys
 
-import enchant
+try:
+    import enchant
+    ENCHANT_AVAILABLE = True
+except ImportError:
+    ENCHANT_AVAILABLE = False
 
 from PyQt4.Qt import *
 
@@ -43,8 +47,12 @@ class RstTextEdit(QPlainTextEdit):
         QPlainTextEdit.__init__(self, *args)
         self.lineNumber = LineNumber(self)
 
-        # Default dictionary based on the current locale.
-        self.dict = enchant.Dict()
+        if ENCHANT_AVAILABLE:
+            # Default dictionary based on the current locale.
+            self.dict = enchant.Dict()
+        else:
+            self.dict = None
+
         self.highlighter = RstHighlighter(self.document())
         self.highlighter.setDict(self.dict)
 
