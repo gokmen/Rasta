@@ -11,18 +11,13 @@
 
 # Python Core
 import os
+import re
 import sys
 
 # i18n Support
 import gettext
 _ = gettext.translation('rasta', fallback=True).ugettext
 INSTALL_PACKAGE_WARNING = _('Please install "%s" package.')
-
-# Piksemel
-try:
-    import piksemel
-except ImportError:
-    sys.exit(INSTALL_PACKAGE_WARNING % 'piksemel')
 
 # Docutils
 try:
@@ -64,8 +59,8 @@ PUB.settings.warning_stream = StringIO()
 def clear_log(log):
     ''' Removes not needed lines from log output '''
     try:
-        piks = piksemel.parseString(unicode(log))
-        return piks.getAttribute('line'), piks.getTagData('paragraph')
+        log = unicode(log)
+        return re.findall("line\=\"(.*?)\"", log)[0], re.findall("\<paragraph\>(.*?)\<\/paragraph\>", log)[0]
     except:
         return 1, _('Rasta parse error: %s' % log)
 
