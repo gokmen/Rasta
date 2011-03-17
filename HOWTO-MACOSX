@@ -46,20 +46,7 @@ Howto Rasta on Mac OS X
   cd docutils-0.6
   sudo python setup.py install
 
-6. **Piksemel**:
-
- http://svn.pardus.org.tr/uludag/trunk/piksemel
-
- You can check-out it by::
-
-  $ svn co http://svn.pardus.org.tr/uludag/trunk/piksemel
-
- Installing::
-
-  cd piksemel
-  sudo python setup.py install
-
-7. **Rasta \\o/**:
+6. **Rasta \\o/**:
 
  http://svn.pardus.org.tr/uludag/trunk/rasta
 
