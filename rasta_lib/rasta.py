@@ -369,6 +369,7 @@ class Rasta(QMainWindow):
         self.ui.actionAbout.triggered.connect(self.showAbout)
         self.ui.textEdit.textChanged.connect(self.updateRst)
         self.ui.logs.doubleClicked.connect(self.goToLine)
+        self.ui.actionSpellcheck.setEnabled(SPELL_CHECK)
 
     def buildSci(self, font = None):
         ''' It builds RstEdit component '''

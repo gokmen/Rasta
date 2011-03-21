@@ -36,6 +36,14 @@ try:
 except ImportError:
     sys.exit(INSTALL_PACKAGE_WARNING % 'Qt4')
 
+# Spell Check
+try:
+    SPELL_CHECK = True
+    import enchant
+except ImportError:
+    print _("Warning: Enchant module not found, spellchecking will be disabled.")
+    SPELL_CHECK = False
+
 # Rasta Core Library
 try:
     from mainWindow import Ui_Rasta

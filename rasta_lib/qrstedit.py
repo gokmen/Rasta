@@ -15,12 +15,7 @@
 import re
 import sys
 
-try:
-    import enchant
-    ENCHANT_AVAILABLE = True
-except ImportError:
-    ENCHANT_AVAILABLE = False
-
+from utils import *
 from PyQt4.Qt import *
 
 # i18n Support
@@ -47,14 +42,11 @@ class RstTextEdit(QPlainTextEdit):
         QPlainTextEdit.__init__(self, *args)
         self.lineNumber = LineNumber(self)
 
-        if ENCHANT_AVAILABLE:
+        if SPELL_CHECK:
             # Default dictionary based on the current locale.
             self.dict = enchant.Dict()
-        else:
-            self.dict = None
-
-        self.highlighter = RstHighlighter(self.document())
-        self.highlighter.setDict(self.dict)
+            self.highlighter = RstHighlighter(self.document())
+            self.highlighter.setDict(self.dict)
 
         self.cursorPositionChanged.connect(self.highlightCurrentLine)
         self.highlightCurrentLine()
@@ -71,6 +63,9 @@ class RstTextEdit(QPlainTextEdit):
         self.lineNumber._flaged_lines = []
 
     def toggleSpellChecking(self):
+        if not SPELL_CHECK:
+            return
+
         if not self.highlighter.dict:
             self.highlighter.setDict(self.dict)
         else:
