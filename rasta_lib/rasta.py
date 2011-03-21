@@ -317,7 +317,7 @@ class Rasta(QMainWindow):
         self.settings.beginGroup('TextEdit')
         self.ui.textEdit.resize(
                 self.settings.value('size', QSize(300, 560)).toSize())
-        self.buildSci(self.settings.value('font', 'Sans Mono'))
+        self.buildSci(self.settings.value('font', 'Monospace'))
         self.settings.endGroup()
 
     ## UI Utils
